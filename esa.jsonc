@@ -1,9 +1,5 @@
 {
   "name": "nextjs-template",
   "installCommand": "npm install",
-  "buildCommand": "npm run build",
-  "assets": {
-    "directory": "./out",
-    "notFoundStrategy": "404Page"
-  }
+  "buildCommand": "npm run build"
 }
