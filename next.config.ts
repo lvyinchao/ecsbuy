@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // 使用 standalone 输出模式以支持 ESA EdgeRoutine
-  output: "standalone",
+  // ESA Pages 支持 Next.js 默认模式，无需特殊配置
+  // API Routes 会自动工作
 };
 
 export default nextConfig;
