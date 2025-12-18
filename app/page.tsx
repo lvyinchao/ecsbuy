@@ -1,3 +1,5 @@
+import ChatAssistant from './components/ChatAssistant';
+
 export default function Home() {
   const useCases = [
     {
@@ -159,6 +161,9 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* 智能问答助手 */}
+      <ChatAssistant />
     </div>
   );
 }
