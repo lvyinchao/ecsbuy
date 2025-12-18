@@ -1,0 +1,9 @@
+{
+  "build": {
+    "command": "npm run build",
+    "output": ".next"
+  },
+  "env": {
+    "DASHSCOPE_API_KEY": "@DASHSCOPE_API_KEY"
+  }
+}

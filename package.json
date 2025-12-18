@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:api": "node -e \"console.log('请运行 test-api.bat (Windows) 或 test-api.sh (Linux/Mac) 来测试 API')\""
   },
   "dependencies": {
     "next": "15.5.0",
