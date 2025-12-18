@@ -95,7 +95,7 @@ export async function POST(request: Request) {
                   if (content) {
                     controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content })}\n\n`));
                   }
-                } catch (e) {
+                } catch {
                   // 忽略解析错误
                 }
               }

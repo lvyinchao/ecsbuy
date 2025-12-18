@@ -100,14 +100,14 @@ export default function ChatAssistant() {
                   return newMessages;
                 });
               }
-            } catch (e) {
+            } catch {
               // 忽略解析错误
             }
           }
         }
       }
 
-    } catch (error) {
+    } catch {
       setMessages(prev => {
         const newMessages = [...prev];
         newMessages[newMessages.length - 1] = {
@@ -185,23 +185,23 @@ export default function ChatAssistant() {
                         remarkPlugins={[remarkGfm]}
                         rehypePlugins={[rehypeHighlight]}
                         components={{
-                          p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
-                          ul: ({node, ...props}) => <ul className="list-disc list-inside mb-2 space-y-1" {...props} />,
-                          ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-2 space-y-1" {...props} />,
-                          li: ({node, ...props}) => <li className="ml-2" {...props} />,
-                          code: ({node, inline, ...props}: any) => 
+                          p: ({...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                          ul: ({...props}) => <ul className="list-disc list-inside mb-2 space-y-1" {...props} />,
+                          ol: ({...props}) => <ol className="list-decimal list-inside mb-2 space-y-1" {...props} />,
+                          li: ({...props}) => <li className="ml-2" {...props} />,
+                          code: ({inline, children, ...props}: { inline?: boolean; className?: string; children?: React.ReactNode }) => 
                             inline ? (
-                              <code className="bg-gray-200 dark:bg-gray-600 px-1.5 py-0.5 rounded text-xs" {...props} />
+                              <code className="bg-gray-200 dark:bg-gray-600 px-1.5 py-0.5 rounded text-xs" {...props}>{children}</code>
                             ) : (
-                              <code className="block bg-gray-800 text-gray-100 p-3 rounded-lg overflow-x-auto text-xs my-2" {...props} />
+                              <code className="block bg-gray-800 text-gray-100 p-3 rounded-lg overflow-x-auto text-xs my-2" {...props}>{children}</code>
                             ),
-                          pre: ({node, ...props}) => <pre className="my-2 overflow-x-auto" {...props} />,
-                          h1: ({node, ...props}) => <h1 className="text-lg font-bold mb-2 mt-3" {...props} />,
-                          h2: ({node, ...props}) => <h2 className="text-base font-bold mb-2 mt-2" {...props} />,
-                          h3: ({node, ...props}) => <h3 className="text-sm font-bold mb-1 mt-2" {...props} />,
-                          strong: ({node, ...props}) => <strong className="font-semibold" {...props} />,
-                          a: ({node, ...props}) => <a className="text-blue-600 dark:text-blue-400 hover:underline" {...props} />,
-                          blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-3 italic my-2" {...props} />,
+                          pre: ({...props}) => <pre className="my-2 overflow-x-auto" {...props} />,
+                          h1: ({...props}) => <h1 className="text-lg font-bold mb-2 mt-3" {...props} />,
+                          h2: ({...props}) => <h2 className="text-base font-bold mb-2 mt-2" {...props} />,
+                          h3: ({...props}) => <h3 className="text-sm font-bold mb-1 mt-2" {...props} />,
+                          strong: ({...props}) => <strong className="font-semibold" {...props} />,
+                          a: ({...props}) => <a className="text-blue-600 dark:text-blue-400 hover:underline" {...props} />,
+                          blockquote: ({...props}) => <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-3 italic my-2" {...props} />,
                         }}
                       >
                         {msg.content || '…'}
