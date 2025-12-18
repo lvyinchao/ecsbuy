@@ -1,5 +1,9 @@
 {
-  "name": "nextjs-template",
+  "name": "ecsbuy",
   "installCommand": "npm install",
-  "buildCommand": "npm run build"
+  "buildCommand": "npm run build",
+  "entry": "./.next/standalone/server.js",
+  "assets": {
+    "directory": "./public"
+  }
 }
