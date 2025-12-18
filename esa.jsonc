@@ -1,8 +1,10 @@
 {
   "name": "nextjs-template",
   "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "entry": "./.next/standalone/server.js",
   "assets": {
-    "directory": "./out",
+    "directory": "./.next/static",
     "notFoundStrategy": "404Page"
   }
 }
